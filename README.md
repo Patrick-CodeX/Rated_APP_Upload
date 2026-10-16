@@ -4,10 +4,9 @@
 
 ### Instant Batch Professor Ratings & Registration Assistant
 
-[![Platform: Android](https://img.shields.io/badge/Platform-Android%20APK-3DDC84?style=for-the-badge&logo=android&logoColor=white)](#-download--installation)
-[![Platform: Windows](https://img.shields.io/badge/Platform-Windows%20Desktop-0078D6?style=for-the-badge&logo=windows&logoColor=white)](#-download--installation)
-[![Status: Free](https://img.shields.io/badge/Price-100%25%20Free-success?style=for-the-badge)](#)
-[![Privacy: Offline Ready](https://img.shields.io/badge/Privacy-Offline%20First-blueviolet?style=for-the-badge)](#)
+[![Flutter](https://img.shields.io/badge/Flutter-%2302569B.svg?style=for-the-badge&logo=Flutter&logoColor=white)](https://flutter.dev/)
+[![Dart](https://img.shields.io/badge/dart-%230175C2.svg?style=for-the-badge&logo=dart&logoColor=white)](https://dart.dev/)
+[![License: Custom](https://img.shields.io/badge/License-Proprietary%20%2F%20Custom-orange.svg?style=for-the-badge)](LICENSE)
 
 <p align="center">
   <b>Tired of opening 25 browser tabs just to check your professors during registration?</b><br>
