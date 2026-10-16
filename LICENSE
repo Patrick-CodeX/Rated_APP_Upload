@@ -1,21 +1,63 @@
-MIT License
+Rated Proprietary License (All Rights Reserved)
 
-Copyright (c) 2026 Patrick-CodeX
+Copyright (c) 2026 Patrick-CodeX. All rights reserved.
 
-Permission is hereby granted, free of charge, to any person obtaining a copy
-of this software and associated documentation files (the "Software"), to deal
-in the Software without restriction, including without limitation the rights
-to use, copy, modify, merge, publish, distribute, sublicense, and/or sell
-copies of the Software, and to permit persons to whom the Software is
-furnished to do so, subject to the following conditions:
+This software and its source code (the "Software") are the exclusive
+property of Patrick-CodeX ("Licensor"). The Software is made visible for
+viewing and personal use only. It is NOT open source.
 
-The above copyright notice and this permission notice shall be included in all
-copies or substantial portions of the Software.
+1. PERMITTED USE
+   You may use the app as you please.
 
-THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR
-IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY,
-FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE
-AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER
-LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
-OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
-SOFTWARE.
+2. RESTRICTIONS
+   Without prior written permission from the Licensor, you may NOT:
+   (a) modify, adapt, translate, or create derivative works of the Software;
+   (b) copy, publish, distribute, upload, sublicense, or otherwise make the
+       Software available to anyone else, in source or compiled form;
+   (c) sell, rent, lease, or otherwise profit from the Software, including
+       through advertising, subscriptions, paid distribution, or bundling it
+       into a commercial product or service;
+   (d) remove or alter any copyright, license, or attribution notice;
+   (e) use the Licensor's name, logo, or app branding to promote any other
+       product or service.
+
+3. CHANGES AND REQUESTS
+   Any change, feature, fix, or other use you would like to see made, or any
+   permission you need beyond this license, must be requested from and
+   approved by the Licensor in writing before you act on it. Contact:
+   github.com/Patrick-CodeX or write an issue.
+   Suggestions you send to the Licensor may be used by the Licensor freely,
+   without payment or obligation, and give you no ownership or rights in the
+   Software.
+
+4. TERMINATION
+   This license ends automatically, without notice, if you violate any of
+   its terms. On termination you must stop all use of the Software and
+   delete all copies in your possession.
+
+5. REMEDIES
+   Any use of the Software outside this license is unauthorized and may
+   constitute copyright infringement. The Licensor reserves all legal
+   remedies available under applicable law, including injunctive relief,
+   damages, recovery of profits, and attorney's fees where permitted.
+
+6. OWNERSHIP
+   The Software is licensed, not sold. All rights not expressly granted in
+   this license are reserved by the Licensor.
+
+7. THIRD-PARTY COMPONENTS
+   This license covers only the Licensor's original code and assets.
+   Third-party packages and libraries used by the Software remain under
+   their own respective licenses, as well any APIs used.
+
+8. NO WARRANTY
+   THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR
+   IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY,
+   FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE
+   LICENSOR BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER LIABILITY, WHETHER IN AN
+   ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM, OUT OF OR IN
+   CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE SOFTWARE.
+
+9. GOVERNING LAW
+   This license is governed by the laws of the State of Georgia, United
+   States, without regard to conflict-of-law rules.
