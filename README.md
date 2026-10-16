@@ -1,94 +1,101 @@
 <div align="center">
 
-# ☕ Cafno
+# 🎓 ProfFinder
 
-### Precision Caffeine Half-Life & Sleep Clearance Tracker
+### Instant Batch Professor Ratings & Registration Assistant
 
-[![Flutter](https://img.shields.io/badge/Flutter-%2302569B.svg?style=for-the-badge&logo=Flutter&logoColor=white)](https://flutter.dev/)
-[![Dart](https://img.shields.io/badge/dart-%230175C2.svg?style=for-the-badge&logo=dart&logoColor=white)](https://dart.dev/)
-[![License: Custom](https://img.shields.io/badge/License-Proprietary%20%2F%20Custom-orange.svg?style=for-the-badge)](LICENSE)
+[![Platform: Android](https://img.shields.io/badge/Platform-Android%20APK-3DDC84?style=for-the-badge&logo=android&logoColor=white)](#-download--installation)
+[![Platform: Windows](https://img.shields.io/badge/Platform-Windows%20Desktop-0078D6?style=for-the-badge&logo=windows&logoColor=white)](#-download--installation)
+[![Status: Free](https://img.shields.io/badge/Price-100%25%20Free-success?style=for-the-badge)](#)
+[![Privacy: Offline Ready](https://img.shields.io/badge/Privacy-Offline%20First-blueviolet?style=for-the-badge)](#)
 
 <p align="center">
-  <b>Ever wondered if that 4:00 PM cold brew is going to ruin your sleep tonight?</b><br>
-  Cafno models real-time pharmacokinetic caffeine decay to project active stimulation levels straight to your bedtime.
+  <b>Tired of opening 25 browser tabs just to check your professors during registration?</b><br>
+  ProfFinder lets you check entire course schedules in seconds—no ads, no slow page loads, and 100% offline support.
 </p>
+
+[⬇️ **Download Latest Release**](#-download--installation) &nbsp;•&nbsp; [✨ **Features**](#-key-features) &nbsp;•&nbsp; [📊 **Rating Guide**](#-how-to-read-the-ratings)
 
 </div>
 
 ---
 
-## 🌟 The Purpose
+## 🌟 Why ProfFinder?
 
-Most health apps treat caffeine as a static daily counter—alerting you once you hit 400 mg, but ignoring when you drank it. In reality, caffeine doesn't instantly leave your body; its biological half-life averages **5.0 hours**. A late-afternoon espresso can still leave significant active stimulant in your bloodstream at midnight, blocking adenosine receptors and sabotaging deep (REM) sleep.
+Class registration happens in minutes. Waiting for ad-heavy review pages to load while course seats vanish is frustrating. 
 
-**Cafno** solves this by:
-1. **Modeling Multi-Dose Exponential Decay** so you know the exact active caffeine in your body right now.
-2. **Projecting Levels to Your Exact Bedtime** to answer the critical question: *"Can I have another cup without wrecking my sleep?"*
-3. **Offering an Interactive 24-Hour Scrub Curve** to inspect future clearance hour by hour.
-4. **Providing a Distraction-Free, Industrial UI** designed in warm roasted orange and deep espresso black with zero bloat or forced accounts.
+**ProfFinder** is built specifically for crunch-time registration:
+1. **Paste Entire Schedules at Once:** Copy a list of professors or class sections and get instant score comparisons side by side.
+2. **Never Get Locked Out:** Comes pre-loaded with an offline database so you get ratings even if university Wi-Fi slows down or review sites go down.
+3. **No Fluff or Ads:** See the four metrics that matter most: Overall Rating, Difficulty Level, Repeat Rate ("Would Take Again"), and Total Reviews.
+4. **Lightweight & Private:** No accounts, no subscriptions, and no background tracking.
 
 ---
 
 ## ✨ Key Features
 
-| Feature | Description |
+| Feature | What It Does for You |
 | :--- | :--- |
-| ⚡ **Pharmacokinetic Half-Life Engine** | Stacks and calculates exponential clearance ($t_{1/2} = 5.0\text{h}$) across all drinks logged throughout the day. |
-| 📈 **Interactive 24-Hour Scrub Chart** | Touch or drag along the curve to view pinned crosshairs, exact time offsets, and remaining active milligrams ($y$-value). |
-| 🛌 **Dedicated Bedtime Target System** | Set your target sleep time with an interactive time pill; get live countdowns and projected bedtime caffeine levels. |
-| 🛡️ **Smart Collision-Free Timeline** | Custom bounding-box painter dynamically prevents timeline marks (`Now`, `Bed`, `+6h`, etc.) from ever overlapping. |
-| ☕ **Hybrid Manual & Preset Logging** | Single-tap chips for common drinks (Espresso, Cold Brew, Drip, Energy Drink) paired with direct numeric keyboard typing and steppers. |
-| ✏️ **Full Intake Management** | Edit logged entries, adjust fluid ounces (`oz`) or caffeine (`mg`), or swipe left to dismiss and delete. |
-| 🔒 **100% Offline & Private** | Starts on a clean slate with zero dummy data. All logs and bedtime preferences stay on your device via encrypted JSON. |
+| ⚡ **Instant Multi-Search** | Paste 10+ instructor names together and compare them in one unified grid. |
+| 📴 **Offline-Ready Database** | Automatically saves looked-up instructors to your device so searches work without an active internet connection. |
+| 🎯 **Essential Metrics Only** | Direct access to Overall Quality (1–5), Course Difficulty (1–5), and Would Take Again percentages. |
+| 🧹 **Zero Ads & Zero Bloat** | Instant startup with a distraction-free interface built strictly for speed. |
+| 🔍 **Smart Name Matching** | Intelligently handles typos, `Last, First` formats, and middle initials automatically. |
+| 💻 **Everywhere You Need It** | Optimized for mobile phones on the go and widescreen desktop setups during registration crunch. |
 
 ---
 
-## 🏗️ How It Works (Technical Architecture)
+## 📊 How to Read the Ratings
 
-Cafno operates entirely on-device without external backend APIs, driving all calculations through local pharmacokinetic models and custom hardware-accelerated canvas rendering:
+ProfFinder color-codes every instructor so you can make fast decisions without reading through hundreds of comments:
 
-### 1. Pharmacokinetic Exponential Decay Formula
-Caffeine clearance follows first-order elimination kinetics. For each drink $i$ with initial caffeine $C_i$ consumed at timestamp $T_i$, the active load at target time $t$ ($t \ge T_i$) is computed as:
-
-$$C_{\text{active}}(t) = \sum_{i, T_i \le t} C_i \times \left(0.5\right)^{\frac{t - T_i}{5.0\text{ hours}}}$$
-
-### 2. High-Performance Canvas Plotting (`CustomPainter`)
-Instead of heavy charting libraries, Cafno uses a lightweight `InteractiveDecayChartPainter` that:
-* Samples 96 discrete timeline steps across a rolling 24-hour viewport ($-4\text{h}$ past to $+20\text{h}$ future).
-* Fills a subtle vertical alpha gradient under the decay path using the brand's roasted orange palette (`#DE6418`).
-* Plots horizontal guide marks at physiological thresholds ($50\text{ mg}$ and $100\text{ mg}$).
-
-### 3. Collision-Free Timeline Layout
-Dynamic milestone labels (`Now`, `Bed`) and relative interval ticks (`-4h`, `+6h`, `+12h`, `+18h`) are evaluated through an internal bounding-box resolver (`canPlace()`). If a secondary reference tick falls within 10 horizontal pixels of your bedtime marker, it is automatically suppressed to ensure crisp typography on any screen width.
+| Status | Overall Quality | Difficulty | Recommendation |
+| :---: | :---: | :---: | :--- |
+| 🟢 **Top Pick** | **4.0 – 5.0** | **$\le$ 3.2** | High student satisfaction, reasonable workload. Ideal first-choice pick for your schedule. |
+| 🟡 **Balanced** | **3.0 – 3.9** | **3.3 – 4.0** | Solid teacher with standard grading expectations. Reliable backup option. |
+| 🔴 **High Challenge** | **Below 3.0** | **$\ge$ 4.0** | Harsh grading, heavy workload, or mixed student sentiment. Look for alternative sections if possible. |
 
 ---
 
-## 🛌 Sleep Readiness Thresholds
+## 📲 Download & Installation
 
-Cafno maps bedtime caffeine loads into three actionable physiological states:
+### 📱 Android
+* **Version:** 1.0.0
+* **Requirement:** Android 7.0 or higher
+* 👉 **[Download Android APK (Direct)](https://github.com/your-username/prof_finder/releases/latest)**
+> *Tip: When installing, tap "Allow from this source" if prompted by Android.*
 
-| Status | Threshold | Physiological Impact |
-| :---: | :---: | :--- |
-| 🟢 **SAFE** | $\le 40\text{ mg}$ | Minimal adenosine receptor blockade. System is clear for natural melatonin release and deep REM cycles. |
-| 🟡 **CAUTION** | $41 - 100\text{ mg}$ | Active stimulant remaining. May prolong sleep latency (time to fall asleep) and reduce slow-wave sleep. |
-| 🔴 **ELEVATED** | $> 100\text{ mg}$ | High physiological stimulation. Sleep architecture will be noticeably impaired; late caffeine intake is strongly discouraged. |
+### 💻 Windows Desktop
+* **Version:** 1.0.0
+* **Requirement:** Windows 10 / 11 (64-bit)
+* 👉 **[Download Windows Installer (.exe / .zip)](https://github.com/your-username/prof_finder/releases/latest)**
 
----
-
-## 📦 Dependencies
-
-Cafno is built to be ultra-lean with minimal external package bloat:
-
-* **[flutter](https://flutter.dev/)** — Core UI SDK and CustomPaint rendering pipeline.
-* **[shared_preferences](https://pub.dev/packages/shared_preferences)** — Persistent on-device JSON storage for intake history and bedtime configuration.
+*(macOS and iOS versions coming soon)*
 
 ---
 
-## 🚀 Getting Started
+## 🛡️ Privacy & Reliability
 
-### Installation & Run
+* **No Accounts Required:** Open the app and start searching immediately.
+* **Local Storage:** All lookups, recent searches, and saved course lists remain strictly on your local device.
+* **Network Friendly:** Automatically caches retrieved data so you don't repeatedly reload the same instructor twice.
 
-**Download The APK for Android no IOS install CURRENTLY**
-### 🤝 Contributing
-Contributions, issues, and feature requests are welcome!
-Feel free to open an issue or submit a pull request if you want to help make Cafno even better.
+---
+
+## 💬 Frequently Asked Questions
+
+**Where do the ratings come from?**  
+Scores are compiled from public student review aggregators to give you an accurate snapshot of difficulty and teaching quality.
+
+**Can I use this without internet?**  
+Yes! ProfFinder includes a pre-packaged offline directory and automatically stores every new teacher you search.
+
+**Is it free?**  
+Yes, ProfFinder is completely free with no paywalls or in-app purchases.
+
+---
+
+## 🤝 Feedback & Support
+
+Have a suggestion, found a missing instructor, or need help?
+* Open an issue on our tracker or submit feedback directly through the app settings.
